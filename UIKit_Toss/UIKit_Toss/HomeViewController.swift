@@ -11,7 +11,6 @@ class HomeViewController: UIViewController {
     private let backgroundColor: UIColor = UIColor(named: "BackgroundColor") ?? .white
     
     
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +28,7 @@ class HomeViewController: UIViewController {
         alarmButton.tintColor = .gray
         
         navigationItem.rightBarButtonItems = [alarmButton, roundButton]
+        
         
         
         
