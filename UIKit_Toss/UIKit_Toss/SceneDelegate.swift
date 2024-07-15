@@ -17,20 +17,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         self.window = UIWindow(windowScene: windowScene)
         
-        let viewController = ViewController()
-        let firstNavigationController = UINavigationController(rootViewController: viewController)
-        firstNavigationController.tabBarItem = UITabBarItem(title: "홈", image: UIImage(systemName: "house.fill"), tag: 0)
-        
-        let sideViewController = SideViewController()
-        let secondNavigationController = UINavigationController(rootViewController: sideViewController)
-        secondNavigationController.tabBarItem = UITabBarItem(title: "혜택", image: UIImage(systemName: "diamond.fill"), tag: 1)
-        
-        let tabBarController = UITabBarController()
-        tabBarController.viewControllers = [firstNavigationController, secondNavigationController]
-        
-        self.window?.rootViewController = tabBarController
+        self.window?.rootViewController = TabBarController()
         self.window?.makeKeyAndVisible()
-        
         
     }
 
