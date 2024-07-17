@@ -13,9 +13,14 @@ class BalanceTableViewCell: UITableViewCell {
         let imageView = UIImageView()
         let Logo = UIImage(systemName: "dollarsign.circle.fill")
         imageView.image = Logo
-        imageView.contentMode = .scaleAspectFill
-        imageView.layer.cornerRadius = imageView.frame.height/2
+        imageView.contentMode = .scaleAspectFit
+        imageView.layer.cornerRadius = 25
         imageView.clipsToBounds = true
+        imageView.layer.masksToBounds = true
+        NSLayoutConstraint.activate([
+            imageView.widthAnchor.constraint(equalToConstant: 50),
+            imageView.heightAnchor.constraint(equalToConstant: 50),
+        ])
         return imageView
     }()
     
@@ -35,7 +40,12 @@ class BalanceTableViewCell: UITableViewCell {
     
     private lazy var sendButton: UIButton = {
         let button = UIButton()
-        button.setTitle("송금", for: .normal)
+        var config = UIButton.Configuration.filled()
+        config.title = "송금"
+        config.baseBackgroundColor = UIColor(named: "BackgroundColor")
+        config.baseForegroundColor = .gray
+        config.cornerStyle = .medium
+        button.configuration = config
         button.addAction(UIAction {[weak self] _ in
             print("송금 버튼 Click")
         }, for: .touchUpInside)
@@ -59,18 +69,19 @@ class BalanceTableViewCell: UITableViewCell {
         
         
         NSLayoutConstraint.activate([
-            logoView.topAnchor.constraint(equalTo: safeArea.topAnchor),
-            logoView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor),
+            logoView.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 5),
+            logoView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: 5),
             logoView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor),
-            logoView.widthAnchor.constraint(equalToConstant: 60),
+ 
             
-            bankName.topAnchor.constraint(equalTo: safeArea.topAnchor),
+            bankName.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 5),
             bankName.leadingAnchor.constraint(equalTo: logoView.trailingAnchor, constant: 10),
             
             bankBalance.topAnchor.constraint(equalTo: bankName.bottomAnchor, constant: 6),
             bankBalance.leadingAnchor.constraint(equalTo: logoView.trailingAnchor, constant: 10),
             
             sendButton.centerYAnchor.constraint(equalTo: logoView.centerYAnchor),
+            sendButton.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor)
             
             
         ])
