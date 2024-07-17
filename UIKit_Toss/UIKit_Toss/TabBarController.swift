@@ -19,7 +19,6 @@ class TabBarController: UITabBarController {
         let vc5 = SideViewController()
         
         
-        vc1.navigationItem.largeTitleDisplayMode = .always
         vc2.navigationItem.largeTitleDisplayMode = .always
         vc3.navigationItem.largeTitleDisplayMode = .always
         vc4.navigationItem.largeTitleDisplayMode = .always
@@ -40,7 +39,7 @@ class TabBarController: UITabBarController {
         let nav5 = UINavigationController(rootViewController: vc5)
         nav5.tabBarItem = UITabBarItem(title: "전체", image: UIImage(systemName: "list.bullet"), tag: 4)
         
-        nav1.navigationBar.prefersLargeTitles = true
+//        nav1.navigationBar.prefersLargeTitles = true
 //        nav2.navigationBar.prefersLargeTitles = true
         
         setViewControllers([nav1, nav2, nav3, nav4, nav5], animated: true)

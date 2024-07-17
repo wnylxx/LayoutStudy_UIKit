@@ -9,7 +9,7 @@ import UIKit
 
 class BalanceTableViewCell: UITableViewCell {
     
-    private lazy var LogoView: UIImageView = {
+    private lazy var logoView: UIImageView = {
         let imageView = UIImageView()
         let Logo = UIImage(systemName: "dollarsign.circle.fill")
         imageView.image = Logo
@@ -41,5 +41,56 @@ class BalanceTableViewCell: UITableViewCell {
         }, for: .touchUpInside)
        return button
     }()
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        addSubview(logoView)
+        addSubview(bankName)
+        addSubview(bankBalance)
+        addSubview(sendButton)
+        
+        logoView.translatesAutoresizingMaskIntoConstraints = false
+        bankName.translatesAutoresizingMaskIntoConstraints = false
+        bankBalance.translatesAutoresizingMaskIntoConstraints = false
+        sendButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        let safeArea = self.safeAreaLayoutGuide
+        
+        
+        NSLayoutConstraint.activate([
+            logoView.topAnchor.constraint(equalTo: safeArea.topAnchor),
+            logoView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor),
+            logoView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor),
+            logoView.widthAnchor.constraint(equalToConstant: 60),
+            
+            bankName.topAnchor.constraint(equalTo: safeArea.topAnchor),
+            bankName.leadingAnchor.constraint(equalTo: logoView.trailingAnchor, constant: 10),
+            
+            bankBalance.topAnchor.constraint(equalTo: bankName.bottomAnchor, constant: 6),
+            bankBalance.leadingAnchor.constraint(equalTo: logoView.trailingAnchor, constant: 10),
+            
+            sendButton.centerYAnchor.constraint(equalTo: logoView.centerYAnchor),
+            
+            
+        ])
+        
+        
+        
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func configureCell(bank: BalanceEntry) {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        
+        logoView.image = bank.bankLogo
+        bankName.text = bank.bankName
+        bankBalance.text = "\(numberFormatter.string(for: bank.bankBalance)!) 원"
+    }
+    
 
 }
