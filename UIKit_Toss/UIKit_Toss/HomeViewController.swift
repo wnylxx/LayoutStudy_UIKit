@@ -14,7 +14,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     var sampleData = SampleData()
     
     private lazy var tableView: UITableView = {
-        let tableView = UITableView()
+        let tableView = UITableView(frame: .zero, style: .grouped)
+        tableView.sectionHeaderHeight = 0
         return tableView
     }()
     
@@ -94,7 +95,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             roundButton.centerYAnchor.constraint(equalTo: mainTitle.centerYAnchor),
             roundButton.trailingAnchor.constraint(equalTo: alarmButton.leadingAnchor, constant: -10),
             
-            tableView.topAnchor.constraint(equalTo: mainTitle.bottomAnchor, constant: 10),
+            tableView.topAnchor.constraint(equalTo: mainTitle.bottomAnchor, constant: 5),
             tableView.bottomAnchor.constraint(equalTo: safe.bottomAnchor),
             tableView.leadingAnchor.constraint(equalTo: safe.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: safe.trailingAnchor)
@@ -108,10 +109,23 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 3
+    }
+    
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        switch section {
+        case 0:
+            return 1
+        case 1:
+            return 3
+        case 2:
+            return 1
+        default:
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

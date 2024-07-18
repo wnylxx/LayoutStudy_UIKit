@@ -13,7 +13,7 @@ class BalanceTableViewCell: UITableViewCell {
         let imageView = UIImageView()
         let Logo = UIImage(systemName: "dollarsign.circle.fill")
         imageView.image = Logo
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleAspectFill
         imageView.layer.cornerRadius = 25
         imageView.clipsToBounds = true
         imageView.layer.masksToBounds = true
@@ -69,19 +69,19 @@ class BalanceTableViewCell: UITableViewCell {
         
         
         NSLayoutConstraint.activate([
-            logoView.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 5),
-            logoView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: 5),
-            logoView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor),
+            logoView.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 13),
+            logoView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: -13),
+            logoView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 10),
  
             
-            bankName.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 5),
+            bankName.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 13),
             bankName.leadingAnchor.constraint(equalTo: logoView.trailingAnchor, constant: 10),
             
             bankBalance.topAnchor.constraint(equalTo: bankName.bottomAnchor, constant: 6),
             bankBalance.leadingAnchor.constraint(equalTo: logoView.trailingAnchor, constant: 10),
             
             sendButton.centerYAnchor.constraint(equalTo: logoView.centerYAnchor),
-            sendButton.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor)
+            sendButton.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -10)
             
             
         ])
@@ -105,3 +105,8 @@ class BalanceTableViewCell: UITableViewCell {
     
 
 }
+
+
+#Preview(body: {
+    TabBarController()
+})
