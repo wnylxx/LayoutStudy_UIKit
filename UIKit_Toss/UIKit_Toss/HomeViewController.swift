@@ -9,13 +9,18 @@ import UIKit
 
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    private let backgroundColor: UIColor = UIColor(named: "BackgroundColor") ?? .white
+    // Sample Data
+    var balSampleData = balanceSampleData()
+    var monSampleData = monthSampleData()
     
-    var sampleData = SampleData()
+    private let backgroundColor: UIColor = UIColor(named: "BackgroundColor") ?? .white
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.sectionHeaderHeight = 0
+        
+        // group 했을 때 여백 제거하기 ( 모든 양수보단 작지만 0보다 큰 수 )
+        tableView.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: CGFloat.leastNonzeroMagnitude))
         return tableView
     }()
     
@@ -59,10 +64,10 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }()
     
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        sampleData.createSampleBalanceEntrydata()
+        balSampleData.createSampleBalanceEntrydata()
+        monSampleData.createSampleMonthEntryData()
         
         self.navigationController?.isNavigationBarHidden = true
         
@@ -70,6 +75,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.delegate = self
         
         tableView.register(BalanceTableViewCell.self, forCellReuseIdentifier: "balance")
+        tableView.register(Section01TableViewCell.self, forCellReuseIdentifier: "section01")
+        tableView.register(Section03TableViewCell.self, forCellReuseIdentifier: "section03")
 
         view.backgroundColor = UIColor(named: "BackgroundColor")
         
@@ -97,20 +104,17 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             
             tableView.topAnchor.constraint(equalTo: mainTitle.bottomAnchor, constant: 5),
             tableView.bottomAnchor.constraint(equalTo: safe.bottomAnchor),
-            tableView.leadingAnchor.constraint(equalTo: safe.leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: safe.trailingAnchor)
-            
-            
-            
-            
+            tableView.leadingAnchor.constraint(equalTo: safe.leadingAnchor, constant: 15),
+            tableView.trailingAnchor.constraint(equalTo: safe.trailingAnchor, constant: -15)
         ])
         
         
 
     }
     
+    
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return 4
     }
     
     
@@ -123,16 +127,43 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             return 3
         case 2:
             return 1
+        case 3:
+            return 1
         default:
             return 0
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "balance", for: indexPath) as! BalanceTableViewCell
-        let balanecEntry = sampleData.balanceEntries[indexPath.row]
-        cell.configureCell(bank: balanecEntry)
-        return cell
+        
+        switch indexPath.section {
+        case 0:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "section01", for: indexPath) as! Section01TableViewCell
+            return cell
+            
+        case 1:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "balance", for: indexPath) as! BalanceTableViewCell
+            let balanecEntry = balSampleData.balanceEntries[indexPath.row]
+            cell.configureCell(bank: balanecEntry)
+            return cell
+        case 2:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "balance", for: indexPath) as! BalanceTableViewCell
+            let monthEntry = monSampleData.monthEntries[indexPath.row]
+            cell.configureCell(bank: monthEntry)
+            return cell
+            
+        case 3:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "section03", for: indexPath) as! Section03TableViewCell
+            return cell
+            
+        default:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "section01", for: indexPath) as! Section01TableViewCell
+            return cell
+        }
+        
+        
+        
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

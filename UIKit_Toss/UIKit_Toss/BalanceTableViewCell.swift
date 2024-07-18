@@ -17,10 +17,6 @@ class BalanceTableViewCell: UITableViewCell {
         imageView.layer.cornerRadius = 25
         imageView.clipsToBounds = true
         imageView.layer.masksToBounds = true
-        NSLayoutConstraint.activate([
-            imageView.widthAnchor.constraint(equalToConstant: 50),
-            imageView.heightAnchor.constraint(equalToConstant: 50),
-        ])
         return imageView
     }()
     
@@ -65,23 +61,23 @@ class BalanceTableViewCell: UITableViewCell {
         bankBalance.translatesAutoresizingMaskIntoConstraints = false
         sendButton.translatesAutoresizingMaskIntoConstraints = false
         
-        let safeArea = self.safeAreaLayoutGuide
+//        let safeArea = self.safeAreaLayoutGuide
         
         
         NSLayoutConstraint.activate([
-            logoView.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 13),
-            logoView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: -13),
-            logoView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 10),
+            logoView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            logoView.widthAnchor.constraint(equalToConstant: 50),
+            logoView.heightAnchor.constraint(equalToConstant: 50),
  
             
-            bankName.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 13),
+            bankName.topAnchor.constraint(equalTo: logoView.topAnchor),
             bankName.leadingAnchor.constraint(equalTo: logoView.trailingAnchor, constant: 10),
             
-            bankBalance.topAnchor.constraint(equalTo: bankName.bottomAnchor, constant: 6),
+            bankBalance.bottomAnchor.constraint(equalTo: logoView.bottomAnchor),
             bankBalance.leadingAnchor.constraint(equalTo: logoView.trailingAnchor, constant: 10),
             
             sendButton.centerYAnchor.constraint(equalTo: logoView.centerYAnchor),
-            sendButton.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -10)
+            sendButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10)
             
             
         ])
@@ -101,6 +97,7 @@ class BalanceTableViewCell: UITableViewCell {
         logoView.image = bank.bankLogo
         bankName.text = bank.bankName
         bankBalance.text = "\(numberFormatter.string(for: bank.bankBalance)!) 원"
+        sendButton.configuration?.title = bank.buttonLable
     }
     
 
