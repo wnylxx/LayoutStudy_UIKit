@@ -9,8 +9,11 @@
 /* Begin PBXBuildFile section */
 		181603352C43CF7E00936FBB /* SideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181603342C43CF7E00936FBB /* SideViewController.swift */; };
 		18268C2B2C45470F0055E90E /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18268C2A2C45470F0055E90E /* TabBarController.swift */; };
-		18268C2D2C4561870055E90E /* BalanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18268C2C2C4561870055E90E /* BalanceViewController.swift */; };
 		18268C2F2C4563510055E90E /* BalanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18268C2E2C4563500055E90E /* BalanceTableViewCell.swift */; };
+		1866F2CB2C469F8D00CCCCF1 /* BalanceEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1866F2CA2C469F8D00CCCCF1 /* BalanceEntry.swift */; };
+		1866F2CD2C46AACC00CCCCF1 /* BalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1866F2CC2C46AACC00CCCCF1 /* BalanceView.swift */; };
+		1892FAEF2C48D3C2002BE000 /* Section01TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1892FAEE2C48D3C2002BE000 /* Section01TableViewCell.swift */; };
+		1892FAF12C48F912002BE000 /* Section03TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1892FAF02C48F912002BE000 /* Section03TableViewCell.swift */; };
 		189E9AD62C3FA37F0000AC71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189E9AD52C3FA37F0000AC71 /* AppDelegate.swift */; };
 		189E9AD82C3FA37F0000AC71 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189E9AD72C3FA37F0000AC71 /* SceneDelegate.swift */; };
 		189E9ADA2C3FA37F0000AC71 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189E9AD92C3FA37F0000AC71 /* HomeViewController.swift */; };
@@ -21,8 +24,11 @@
 /* Begin PBXFileReference section */
 		181603342C43CF7E00936FBB /* SideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideViewController.swift; sourceTree = "<group>"; };
 		18268C2A2C45470F0055E90E /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
-		18268C2C2C4561870055E90E /* BalanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceViewController.swift; sourceTree = "<group>"; };
 		18268C2E2C4563500055E90E /* BalanceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceTableViewCell.swift; sourceTree = "<group>"; };
+		1866F2CA2C469F8D00CCCCF1 /* BalanceEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceEntry.swift; sourceTree = "<group>"; };
+		1866F2CC2C46AACC00CCCCF1 /* BalanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceView.swift; sourceTree = "<group>"; };
+		1892FAEE2C48D3C2002BE000 /* Section01TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section01TableViewCell.swift; sourceTree = "<group>"; };
+		1892FAF02C48F912002BE000 /* Section03TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section03TableViewCell.swift; sourceTree = "<group>"; };
 		189E9AD22C3FA37F0000AC71 /* UIKit_Toss.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKit_Toss.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		189E9AD52C3FA37F0000AC71 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		189E9AD72C3FA37F0000AC71 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,8 +76,11 @@
 				189E9ADE2C3FA3800000AC71 /* Assets.xcassets */,
 				189E9AE02C3FA3800000AC71 /* LaunchScreen.storyboard */,
 				189E9AE32C3FA3800000AC71 /* Info.plist */,
-				18268C2C2C4561870055E90E /* BalanceViewController.swift */,
 				18268C2E2C4563500055E90E /* BalanceTableViewCell.swift */,
+				1892FAEE2C48D3C2002BE000 /* Section01TableViewCell.swift */,
+				1892FAF02C48F912002BE000 /* Section03TableViewCell.swift */,
+				1866F2CA2C469F8D00CCCCF1 /* BalanceEntry.swift */,
+				1866F2CC2C46AACC00CCCCF1 /* BalanceView.swift */,
 			);
 			path = UIKit_Toss;
 			sourceTree = "<group>";
@@ -146,12 +155,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1892FAEF2C48D3C2002BE000 /* Section01TableViewCell.swift in Sources */,
 				189E9ADA2C3FA37F0000AC71 /* HomeViewController.swift in Sources */,
 				189E9AD62C3FA37F0000AC71 /* AppDelegate.swift in Sources */,
 				189E9AD82C3FA37F0000AC71 /* SceneDelegate.swift in Sources */,
-				18268C2D2C4561870055E90E /* BalanceViewController.swift in Sources */,
 				18268C2B2C45470F0055E90E /* TabBarController.swift in Sources */,
+				1866F2CB2C469F8D00CCCCF1 /* BalanceEntry.swift in Sources */,
+				1866F2CD2C46AACC00CCCCF1 /* BalanceView.swift in Sources */,
 				18268C2F2C4563510055E90E /* BalanceTableViewCell.swift in Sources */,
+				1892FAF12C48F912002BE000 /* Section03TableViewCell.swift in Sources */,
 				181603352C43CF7E00936FBB /* SideViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
