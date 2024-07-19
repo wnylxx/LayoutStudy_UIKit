@@ -7,7 +7,7 @@
 
 import UIKit
 
-class Section01TableViewCell: UITableViewCell {
+class Section00TableViewCell: UITableViewCell {
 
     private lazy var mainStack: UIStackView = {
         let stackView = UIStackView()

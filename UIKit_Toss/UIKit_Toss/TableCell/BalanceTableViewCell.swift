@@ -7,6 +7,7 @@
 
 import UIKit
 
+// section 01 ~ 02
 class BalanceTableViewCell: UITableViewCell {
     
     private lazy var logoView: UIImageView = {
@@ -38,7 +39,7 @@ class BalanceTableViewCell: UITableViewCell {
         let button = UIButton()
         var config = UIButton.Configuration.filled()
         config.title = "송금"
-        config.baseBackgroundColor = UIColor(named: "BackgroundColor")
+        config.baseBackgroundColor =  UIColor(named: "BackgroundColor")
         config.baseForegroundColor = .gray
         config.cornerStyle = .medium
         button.configuration = config
@@ -51,10 +52,12 @@ class BalanceTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        addSubview(logoView)
-        addSubview(bankName)
-        addSubview(bankBalance)
-        addSubview(sendButton)
+        
+        // 여기에 contentView로 추가하기 (그래서 버튼이 안눌린것 일 수도?)
+        contentView.addSubview(logoView)
+        contentView.addSubview(bankName)
+        contentView.addSubview(bankBalance)
+        contentView.addSubview(sendButton)
         
         logoView.translatesAutoresizingMaskIntoConstraints = false
         bankName.translatesAutoresizingMaskIntoConstraints = false
@@ -96,8 +99,11 @@ class BalanceTableViewCell: UITableViewCell {
         
         logoView.image = bank.bankLogo
         bankName.text = bank.bankName
-        bankBalance.text = "\(numberFormatter.string(for: bank.bankBalance)!) 원"
+        bankBalance.text = if bank.bankBalance == -1 {
+            "연결 하고 내역 보기"
+        } else { "\(numberFormatter.string(for: bank.bankBalance)!) 원"}
         sendButton.configuration?.title = bank.buttonLable
+        sendButton.configuration?.baseBackgroundColor = bank.buttonLable == nil ? .clear : UIColor(named: "BackgroundColor")
     }
     
 

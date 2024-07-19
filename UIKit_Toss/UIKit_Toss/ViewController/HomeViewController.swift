@@ -16,7 +16,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     private let backgroundColor: UIColor = UIColor(named: "BackgroundColor") ?? .white
     
     private lazy var tableView: UITableView = {
-        let tableView = UITableView(frame: .zero, style: .grouped)
+        let tableView = UITableView(frame: .zero, style: .insetGrouped)
+        tableView.separatorStyle = .none
         tableView.sectionHeaderHeight = 0
         
         // group 했을 때 여백 제거하기 ( 모든 양수보단 작지만 0보다 큰 수 )
@@ -28,7 +29,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
        let label = UILabel()
         label.text = "toss"
         label.font = UIFont.systemFont(ofSize: 50, weight: .bold)
-        label.textColor = .gray
+        label.textColor = .systemGray
         return label
     }()
     
@@ -75,8 +76,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.delegate = self
         
         tableView.register(BalanceTableViewCell.self, forCellReuseIdentifier: "balance")
-        tableView.register(Section01TableViewCell.self, forCellReuseIdentifier: "section01")
+        tableView.register(Section00TableViewCell.self, forCellReuseIdentifier: "section00")
         tableView.register(Section03TableViewCell.self, forCellReuseIdentifier: "section03")
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "basicCell")
 
         view.backgroundColor = UIColor(named: "BackgroundColor")
         
@@ -104,8 +106,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             
             tableView.topAnchor.constraint(equalTo: mainTitle.bottomAnchor, constant: 5),
             tableView.bottomAnchor.constraint(equalTo: safe.bottomAnchor),
-            tableView.leadingAnchor.constraint(equalTo: safe.leadingAnchor, constant: 15),
-            tableView.trailingAnchor.constraint(equalTo: safe.trailingAnchor, constant: -15)
+            tableView.leadingAnchor.constraint(equalTo: safe.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: safe.trailingAnchor)
         ])
         
         
@@ -119,33 +121,42 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     
     
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
             return 1
         case 1:
-            return 3
+            return 4
         case 2:
-            return 1
+            return 2
         case 3:
             return 1
         default:
             return 0
         }
     }
+
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         switch indexPath.section {
         case 0:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "section01", for: indexPath) as! Section01TableViewCell
-            return cell
+                let cell = tableView.dequeueReusableCell(withIdentifier: "section00", for: indexPath) as! Section00TableViewCell
+                return cell
             
         case 1:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "balance", for: indexPath) as! BalanceTableViewCell
-            let balanecEntry = balSampleData.balanceEntries[indexPath.row]
-            cell.configureCell(bank: balanecEntry)
-            return cell
+            if indexPath.row < 3 {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "balance", for: indexPath) as! BalanceTableViewCell
+                let balanecEntry = balSampleData.balanceEntries[indexPath.row]
+                cell.configureCell(bank: balanecEntry)
+                return cell
+            } else {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "basicCell", for: indexPath)
+                cell.textLabel?.text = "내 계좌 대출 증권 포인트 보기"
+                cell.textLabel?.textAlignment = .center
+                return cell
+            }
         case 2:
             let cell = tableView.dequeueReusableCell(withIdentifier: "balance", for: indexPath) as! BalanceTableViewCell
             let monthEntry = monSampleData.monthEntries[indexPath.row]
@@ -157,17 +168,30 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             return cell
             
         default:
-            let cell = tableView.dequeueReusableCell(withIdentifier: "section01", for: indexPath) as! Section01TableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "section01", for: indexPath) as! Section00TableViewCell
             return cell
         }
         
-        
-        
-        
     }
     
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+        switch indexPath.section {
+        case 0:
+            return 75
+        case 1:
+            return 80
+        case 2:
+            return 80
+        case 3:
+            return 80
+        default:
+            return 0
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        0
     }
     
     
@@ -182,6 +206,11 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 
 
 }
+
+
+
+
+
 
 #Preview(body: {
     TabBarController()
