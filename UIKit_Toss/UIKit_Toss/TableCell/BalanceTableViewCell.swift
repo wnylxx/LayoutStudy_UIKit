@@ -68,6 +68,7 @@ class BalanceTableViewCell: UITableViewCell {
         
         
         NSLayoutConstraint.activate([
+            logoView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             logoView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
             logoView.widthAnchor.constraint(equalToConstant: 50),
             logoView.heightAnchor.constraint(equalToConstant: 50),
@@ -80,7 +81,7 @@ class BalanceTableViewCell: UITableViewCell {
             bankBalance.leadingAnchor.constraint(equalTo: logoView.trailingAnchor, constant: 10),
             
             sendButton.centerYAnchor.constraint(equalTo: logoView.centerYAnchor),
-            sendButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10)
+            sendButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20)
             
             
         ])

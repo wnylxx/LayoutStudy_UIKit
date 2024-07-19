@@ -18,6 +18,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .insetGrouped)
         tableView.separatorStyle = .none
+        
+        // insetGroup section 간격 줄이기
         tableView.sectionHeaderHeight = 0
         
         // group 했을 때 여백 제거하기 ( 모든 양수보단 작지만 0보다 큰 수 )
@@ -96,10 +98,10 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         NSLayoutConstraint.activate([
             mainTitle.topAnchor.constraint(equalTo: safe.topAnchor),
-            mainTitle.leadingAnchor.constraint(equalTo: safe.leadingAnchor, constant: 15),
+            mainTitle.leadingAnchor.constraint(equalTo: safe.leadingAnchor, constant: 20),
             
             alarmButton.centerYAnchor.constraint(equalTo: mainTitle.centerYAnchor),
-            alarmButton.trailingAnchor.constraint(equalTo: safe.trailingAnchor, constant: -15),
+            alarmButton.trailingAnchor.constraint(equalTo: safe.trailingAnchor, constant: -20),
             
             roundButton.centerYAnchor.constraint(equalTo: mainTitle.centerYAnchor),
             roundButton.trailingAnchor.constraint(equalTo: alarmButton.leadingAnchor, constant: -10),
@@ -118,8 +120,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     func numberOfSections(in tableView: UITableView) -> Int {
         return 4
     }
-    
-    
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -180,18 +180,18 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         case 0:
             return 75
         case 1:
-            return 80
+            if indexPath.row < 3 {
+                return 80
+            } else {
+                return 60
+            }
         case 2:
             return 80
         case 3:
-            return 80
+            return 100
         default:
             return 0
         }
-    }
-    
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        0
     }
     
     

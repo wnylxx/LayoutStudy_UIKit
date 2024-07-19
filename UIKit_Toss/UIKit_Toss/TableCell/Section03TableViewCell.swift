@@ -111,16 +111,16 @@ class Section03TableViewCell: UITableViewCell {
         
         NSLayoutConstraint.activate([
             
-            mainLabel.topAnchor.constraint(equalTo: contentView.topAnchor),
+            mainLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 15),
             mainLabel.leadingAnchor.constraint(equalTo: checkImage.trailingAnchor, constant: 5),
             
             checkImage.centerYAnchor.constraint(equalTo: mainLabel.centerYAnchor),
-            checkImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            checkImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             
             checkButton.centerYAnchor.constraint(equalTo: mainLabel.centerYAnchor),
-            checkButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            checkButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
             
-            buttonStack.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            buttonStack.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -15),
             buttonStack.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             buttonStack.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             

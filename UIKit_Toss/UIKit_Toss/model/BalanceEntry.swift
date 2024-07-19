@@ -42,9 +42,9 @@ struct balanceSampleData {
         let logo3 = UIImage(named: "KakaoLogo")!
         
         
-        let balanceEntry1 = BalanceEntry(type: .data, bankLogo: logo1, bankName: "토스뱅크 통장", bankBalance: 3000000000, buttonLable: "송금")
-        let balanceEntry2 = BalanceEntry(type: .data, bankLogo: logo2, bankName: "IBK 기업은행 계좌", bankBalance: 20000000000, buttonLable: "송금")
-        let balanceEntry3 = BalanceEntry(type: .data, bankLogo: logo3, bankName: "카카오뱅크 통장", bankBalance: 432123400000, buttonLable: "송금")
+        let balanceEntry1 = BalanceEntry(type: .data, bankLogo: logo1, bankName: "토스뱅크 통장", bankBalance: 30000000, buttonLable: "송금")
+        let balanceEntry2 = BalanceEntry(type: .data, bankLogo: logo2, bankName: "IBK 기업은행 계좌", bankBalance: 200000000, buttonLable: "송금")
+        let balanceEntry3 = BalanceEntry(type: .data, bankLogo: logo3, bankName: "카카오뱅크 통장", bankBalance: 432123400, buttonLable: "송금")
         
         balanceEntries += [balanceEntry1, balanceEntry2, balanceEntry3]
         
