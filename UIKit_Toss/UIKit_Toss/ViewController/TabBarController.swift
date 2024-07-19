@@ -41,8 +41,10 @@ class TabBarController: UITabBarController {
         
 //        nav1.navigationBar.prefersLargeTitles = true
 //        nav2.navigationBar.prefersLargeTitles = true
+        self.tabBar.backgroundColor = .white
         
         setViewControllers([nav1, nav2, nav3, nav4, nav5], animated: true)
+        
         
     }
 }

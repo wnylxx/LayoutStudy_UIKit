@@ -7,7 +7,7 @@
 
 import UIKit
 
-class Section01TableViewCell: UITableViewCell {
+class Section00TableViewCell: UITableViewCell {
 
     private lazy var mainStack: UIStackView = {
         let stackView = UIStackView()
@@ -59,8 +59,8 @@ class Section01TableViewCell: UITableViewCell {
         NSLayoutConstraint.activate([
             mainStack.topAnchor.constraint(equalTo: contentView.topAnchor),
             mainStack.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-            mainStack.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            mainStack.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
+            mainStack.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            mainStack.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10)
         ])
     }
     
