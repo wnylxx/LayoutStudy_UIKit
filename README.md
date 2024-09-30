@@ -9,6 +9,5 @@
 
 참고.
 Toss App clone
-![Simulator Screenshot - iPhone 16 Pro - 2024-09-30 at 13 58 26]()
 
-<img src="https://github.com/user-attachments/assets/3cf6e280-7897-4dd7-9e31-ef028f741420  width="200" height="400"/>
+<img src="https://github.com/user-attachments/assets/ab979407-f2d2-43bf-bd41-a81ac361d894"  width="200" height="500"/>
