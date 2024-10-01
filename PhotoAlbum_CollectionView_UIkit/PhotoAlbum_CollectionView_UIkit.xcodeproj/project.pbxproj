@@ -7,24 +7,24 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		18827B552CAC2DA900175D08 /* PhotoAlbum_CollectionView_UIkit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoAlbum_CollectionView_UIkit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		18465BC42CAC327F00F0D588 /* PhotoAlbum_CollectionView_UIkit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoAlbum_CollectionView_UIkit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		18827B672CAC2DAA00175D08 /* Exceptions for "PhotoAlbum_CollectionView_UIkit" folder in "PhotoAlbum_CollectionView_UIkit" target */ = {
+		18465BD62CAC328000F0D588 /* Exceptions for "PhotoAlbum_CollectionView_UIkit" folder in "PhotoAlbum_CollectionView_UIkit" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Info.plist,
+				Supporting/Info.plist,
 			);
-			target = 18827B542CAC2DA900175D08 /* PhotoAlbum_CollectionView_UIkit */;
+			target = 18465BC32CAC327F00F0D588 /* PhotoAlbum_CollectionView_UIkit */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		18827B572CAC2DA900175D08 /* PhotoAlbum_CollectionView_UIkit */ = {
+		18465BC62CAC327F00F0D588 /* PhotoAlbum_CollectionView_UIkit */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				18827B672CAC2DAA00175D08 /* Exceptions for "PhotoAlbum_CollectionView_UIkit" folder in "PhotoAlbum_CollectionView_UIkit" target */,
+				18465BD62CAC328000F0D588 /* Exceptions for "PhotoAlbum_CollectionView_UIkit" folder in "PhotoAlbum_CollectionView_UIkit" target */,
 			);
 			path = PhotoAlbum_CollectionView_UIkit;
 			sourceTree = "<group>";
@@ -32,7 +32,7 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		18827B522CAC2DA900175D08 /* Frameworks */ = {
+		18465BC12CAC327F00F0D588 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -42,18 +42,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		18827B4C2CAC2DA900175D08 = {
+		18465BBB2CAC327F00F0D588 = {
 			isa = PBXGroup;
 			children = (
-				18827B572CAC2DA900175D08 /* PhotoAlbum_CollectionView_UIkit */,
-				18827B562CAC2DA900175D08 /* Products */,
+				18465BC62CAC327F00F0D588 /* PhotoAlbum_CollectionView_UIkit */,
+				18465BC52CAC327F00F0D588 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		18827B562CAC2DA900175D08 /* Products */ = {
+		18465BC52CAC327F00F0D588 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				18827B552CAC2DA900175D08 /* PhotoAlbum_CollectionView_UIkit.app */,
+				18465BC42CAC327F00F0D588 /* PhotoAlbum_CollectionView_UIkit.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -61,64 +61,64 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		18827B542CAC2DA900175D08 /* PhotoAlbum_CollectionView_UIkit */ = {
+		18465BC32CAC327F00F0D588 /* PhotoAlbum_CollectionView_UIkit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 18827B682CAC2DAA00175D08 /* Build configuration list for PBXNativeTarget "PhotoAlbum_CollectionView_UIkit" */;
+			buildConfigurationList = 18465BD72CAC328000F0D588 /* Build configuration list for PBXNativeTarget "PhotoAlbum_CollectionView_UIkit" */;
 			buildPhases = (
-				18827B512CAC2DA900175D08 /* Sources */,
-				18827B522CAC2DA900175D08 /* Frameworks */,
-				18827B532CAC2DA900175D08 /* Resources */,
+				18465BC02CAC327F00F0D588 /* Sources */,
+				18465BC12CAC327F00F0D588 /* Frameworks */,
+				18465BC22CAC327F00F0D588 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				18827B572CAC2DA900175D08 /* PhotoAlbum_CollectionView_UIkit */,
+				18465BC62CAC327F00F0D588 /* PhotoAlbum_CollectionView_UIkit */,
 			);
 			name = PhotoAlbum_CollectionView_UIkit;
 			packageProductDependencies = (
 			);
 			productName = PhotoAlbum_CollectionView_UIkit;
-			productReference = 18827B552CAC2DA900175D08 /* PhotoAlbum_CollectionView_UIkit.app */;
+			productReference = 18465BC42CAC327F00F0D588 /* PhotoAlbum_CollectionView_UIkit.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		18827B4D2CAC2DA900175D08 /* Project object */ = {
+		18465BBC2CAC327F00F0D588 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1600;
 				LastUpgradeCheck = 1600;
 				TargetAttributes = {
-					18827B542CAC2DA900175D08 = {
+					18465BC32CAC327F00F0D588 = {
 						CreatedOnToolsVersion = 16.0;
 					};
 				};
 			};
-			buildConfigurationList = 18827B502CAC2DA900175D08 /* Build configuration list for PBXProject "PhotoAlbum_CollectionView_UIkit" */;
+			buildConfigurationList = 18465BBF2CAC327F00F0D588 /* Build configuration list for PBXProject "PhotoAlbum_CollectionView_UIkit" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 18827B4C2CAC2DA900175D08;
+			mainGroup = 18465BBB2CAC327F00F0D588;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 18827B562CAC2DA900175D08 /* Products */;
+			productRefGroup = 18465BC52CAC327F00F0D588 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				18827B542CAC2DA900175D08 /* PhotoAlbum_CollectionView_UIkit */,
+				18465BC32CAC327F00F0D588 /* PhotoAlbum_CollectionView_UIkit */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		18827B532CAC2DA900175D08 /* Resources */ = {
+		18465BC22CAC327F00F0D588 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -128,7 +128,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		18827B512CAC2DA900175D08 /* Sources */ = {
+		18465BC02CAC327F00F0D588 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -138,7 +138,7 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		18827B692CAC2DAA00175D08 /* Debug */ = {
+		18465BD82CAC328000F0D588 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -149,7 +149,6 @@
 				INFOPLIST_FILE = PhotoAlbum_CollectionView_UIkit/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -165,7 +164,7 @@
 			};
 			name = Debug;
 		};
-		18827B6A2CAC2DAA00175D08 /* Release */ = {
+		18465BD92CAC328000F0D588 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -176,7 +175,6 @@
 				INFOPLIST_FILE = PhotoAlbum_CollectionView_UIkit/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -192,7 +190,7 @@
 			};
 			name = Release;
 		};
-		18827B6B2CAC2DAA00175D08 /* Debug */ = {
+		18465BDA2CAC328000F0D588 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -255,7 +253,7 @@
 			};
 			name = Debug;
 		};
-		18827B6C2CAC2DAA00175D08 /* Release */ = {
+		18465BDB2CAC328000F0D588 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -314,25 +312,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		18827B502CAC2DA900175D08 /* Build configuration list for PBXProject "PhotoAlbum_CollectionView_UIkit" */ = {
+		18465BBF2CAC327F00F0D588 /* Build configuration list for PBXProject "PhotoAlbum_CollectionView_UIkit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				18827B6B2CAC2DAA00175D08 /* Debug */,
-				18827B6C2CAC2DAA00175D08 /* Release */,
+				18465BDA2CAC328000F0D588 /* Debug */,
+				18465BDB2CAC328000F0D588 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		18827B682CAC2DAA00175D08 /* Build configuration list for PBXNativeTarget "PhotoAlbum_CollectionView_UIkit" */ = {
+		18465BD72CAC328000F0D588 /* Build configuration list for PBXNativeTarget "PhotoAlbum_CollectionView_UIkit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				18827B692CAC2DAA00175D08 /* Debug */,
-				18827B6A2CAC2DAA00175D08 /* Release */,
+				18465BD82CAC328000F0D588 /* Debug */,
+				18465BD92CAC328000F0D588 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 18827B4D2CAC2DA900175D08 /* Project object */;
+	rootObject = 18465BBC2CAC327F00F0D588 /* Project object */;
 }
