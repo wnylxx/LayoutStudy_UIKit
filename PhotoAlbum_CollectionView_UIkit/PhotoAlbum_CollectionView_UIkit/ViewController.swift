@@ -21,6 +21,12 @@ class ViewController: UIViewController {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .systemBackground
         collectionView.register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: CustomCollectionViewCell.identifier)
+        
+        // 여백주기
+//        collectionView.contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+        
+        // 스크롤 안될 양이라도 바운스 안되게
+        collectionView.alwaysBounceVertical = false
         return collectionView
     }()
     
@@ -82,4 +88,29 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
 }
 
-
+extension ViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        // 3개의 항목을 2픽셀씩 띄우고 싶음 -> 4픽셀 공간이 남아야 하므로 4/3 = 1.3333
+        let size =  self.view.frame.width/3 - 1.334
+        return CGSize(width: size, height: size)
+    }
+    
+    // Vertical Spacing
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 2
+    }
+    
+    
+    // Horizontal Spacing
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 2
+    }
+    
+    // 좌우 여백
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+//        return UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+//    }
+    
+    
+}
