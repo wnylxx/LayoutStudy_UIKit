@@ -14,7 +14,7 @@
 		18465BD62CAC328000F0D588 /* Exceptions for "PhotoAlbum_CollectionView_UIkit" folder in "PhotoAlbum_CollectionView_UIkit" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Supporting/Info.plist,
+				Info.plist,
 			);
 			target = 18465BC32CAC327F00F0D588 /* PhotoAlbum_CollectionView_UIkit */;
 		};
