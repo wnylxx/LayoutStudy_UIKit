@@ -6,7 +6,6 @@
 
 - ImageAsset 폴더 ignore
 
-
 참고.
 Toss App clone
 
